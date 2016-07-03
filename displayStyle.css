@@ -17,9 +17,6 @@
 	cursor: pointer;
 }
 
-
-
-
 main#display{
 	position: absolute;
 	z-index: 20;
