@@ -12,8 +12,8 @@ PipCanvas.prototype = {
 	//初始化
 	init:function(){
 		this.canvas = document.getElementsByTagName('canvas')[0];
-		this.canvas.width = 1440;
-		this.canvas.height = 719;
+		this.canvas.width = window.innerWidth;
+		this.canvas.height = window.innerWidth*this.proportion;
 		//显示器宽度高度以及坐标
 		this.dWdith = this.canvas.width * 0.49;
 		this.dHeight = this.dWdith * 0.76;
@@ -44,7 +44,7 @@ PipCanvas.prototype = {
 	},
 	displayShadow:function(){
 		this.ctx.save();
-		var shadow = this.ctx.createRadialGradient(this.dLeft+this.dWdith/2,this.dTop+this.dHeight/2,0,this.dLeft+this.dWdith/2,this.dTop+this.dHeight/2,410);
+		var shadow = this.ctx.createRadialGradient(this.dLeft+this.dWdith/2,this.dTop+this.dHeight/2,0,this.dLeft+this.dWdith/2,this.dTop+this.dHeight/2,this.dHeight*0.75);
 		shadow.addColorStop(0,"rgba(0,0,0,0.2)");
 		shadow.addColorStop(0.3,"rgba(0,0,0,0.2)");
 		shadow.addColorStop(0.5,"rgba(0,0,0,0.2)");
