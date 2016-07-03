@@ -45,13 +45,11 @@
 			"list":[
 				{"title":"手机","url":"","text":"13738367048","img":""},
 				{"title":"邮箱","url":"","text":"taojun1994@gmail.com","img":""},
-				{"title":"github","url":"","text":"https://github.com/AdrianTao","img":""}
+				{"title":"github","url":"https://github.com/AdrianTao","text":"https://github.com/AdrianTao","img":""}
 			]
 		}
 	],
 	"ITEMS":[
-	],
-	"DATA":[
 		{
 			"title":"拖动效果",
 			"list":[
@@ -89,5 +87,8 @@
 				{"title":"简易评分","url":"other/1/index.html", "text":"简易评分","img":""}
 			]
 		}
+	],
+	"DATA":[
+		
 	]
 }
