@@ -12,8 +12,8 @@ PipCanvas.prototype = {
 	//初始化
 	init:function(){
 		this.canvas = document.getElementsByTagName('canvas')[0];
-		this.canvas.width = window.innerWidth;
-		this.canvas.height = window.innerHeight;
+		this.canvas.width = 1440;
+		this.canvas.height = 719;
 		//显示器宽度高度以及坐标
 		this.dWdith = this.canvas.width * 0.49;
 		this.dHeight = this.dWdith * 0.76;
