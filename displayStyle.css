@@ -18,13 +18,13 @@
 }
 
 main#display{
-	position: absolute;
+	position: relative;
 	z-index: 20;
 	border:1px solid #6666FF;
-	width: 700px;
-	height: 500px;
-	top: 90px;
-	left: 450px;
+	width: 615px;
+	height: 467px;
+	top: 77.04px;
+	left: 350px;
 	perspective:150;
 	-webkit-perspective:150; /* Safari and Chrome */
 }
@@ -32,9 +32,9 @@ main#display{
 header .header-title{
 	position: absolute;
 	top: 23px;
-	font-size: 25px;
+	font-size: 22px;
 	left: 75px;
-	width: 90px;
+	width: 80px;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
@@ -47,132 +47,133 @@ header ul{
 }
 .header-info li{
 	position: absolute;
-	width: 120px;
+	width: 100px;
 	height: 30px;
 	text-align: center;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 1px;
 	line-height: 30px;
 }
 .header-info li:nth-child(1){
-	top: 40px;
-	left: 150px;
+	top: 35px;
+	left: 140px;
 	transform-style:preserve-3d;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg); /* Safari and Chrome */
 }
 .header-info li:nth-child(2){
-	top: 36px;
-	left: 270px;
+	top: 32px;
+	left: 245px;
 	transform-style:preserve-3d;
 	transform: rotateY(-0.5deg);
 	-webkit-transform: rotateY(-0.5deg); /* Safari and Chrome */
 }
 .header-info li:nth-child(3){
-	top: 36px;
-	left: 393px;
+	top: 32px;
+	left: 353px;
 	transform-style:preserve-3d;
 	transform: rotateY(1deg);
 	-webkit-transform: rotateY(1deg); /* Safari and Chrome */
 }
 .header-info li:nth-child(4){
-	top: 38px;
-	left: 520px;
+	top: 36px;
+	left: 455px;
+	width: 115px;
 	transform-style:preserve-3d;
 	transform: rotateY(2deg);
 	-webkit-transform: rotateY(2deg); /* Safari and Chrome */
 }
 /*显示屏下方的导航按键*/
 #display nav li{
-	font-size: 20px;
+	font-size: 18px;
 	position: absolute;
-	width: 73px;
-	height: 40px;
+	width: 61px;
+	height: 28px;
 	list-style-type: none;
 	text-align: center;
-	line-height: 40px;
+	line-height: 30px;
 	cursor: pointer;
 }
 #display .hover{
 	border:2px solid rgba(30,255,140,0.9); 
 }
 #display nav li:nth-child(1){
-	bottom: 20px;
+	bottom: 50px;
 	left: 73px;
-	width: 72px;
+	width: 60px;
 	transform-style:preserve-3d;
 	transform: rotateY(-2deg) rotateX(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
 #display nav li:nth-child(1).hover{
-	bottom: 18px;
+	bottom: 48px;
 	left: 71px;
 }
 #display nav li:nth-child(2){
-	bottom: 15px;
-	left: 195px;
+	bottom: 45px;
+	left: 181px;
 	transform-style:preserve-3d;
 	transform: rotateY(-1deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(-1deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
 #display nav li:nth-child(2).hover{
-	bottom: 13px;
-	left: 193px;
+	bottom: 43px;
+	left: 179px;
 }
 #display nav li:nth-child(3){
-	bottom: 13px;
-	left: 305px;
+	bottom: 43px;
+	left: 276px;
 	transform: rotateX(-0.5deg);
 	-webkit-transform:rotateX(-0.5deg);
 }
 #display nav li:nth-child(3).hover{
-	bottom: 11px;
-	left: 303px;
+	bottom: 41px;
+	left: 274px;
 
 }
 #display nav li:nth-child(4){
-	bottom: 15px;
-	left: 423px;
-	width: 80px;
+	bottom: 45px;
+	left: 376px;
+	width: 70px;
 	transform-style:preserve-3d;
 	transform: rotateY(0.5deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(0.5deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
 #display nav li:nth-child(4).hover{
-	bottom: 13px;
-	left: 421px;
+	bottom: 43px;
+	left: 374px;
 }
 
 #display nav li:nth-child(5){
-	font-size: 16px;
-	bottom: 17px;
-	left: 545px;
-	width: 80px;
+	font-size: 14px;
+	bottom: 50px;
+	left: 482px;
+	width: 70px;
 	transform-style:preserve-3d;
 	transform: rotateY(1deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(1deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
 #display nav li:nth-child(5).hover{
-	bottom: 15px;
-	left: 543px;
+	bottom: 48px;
+	left: 480px;
 }
 /*列表*/
 main aside{
 	position: absolute;
-	width: 300px;
-	height:340px;
-	top: 78px;
-	left: 30px;
+	width: 245px;
+	height:300px;
+	top: 70px;
+	left: 35px;
 	transform-style:preserve-3d;
 }
 .main-file li{
 	position: absolute;
-	padding-left: 30px;
+	padding-left: 20px;
 	list-style-type: none;
 	display: block;
-	width: 230px;
-	height: 34px;
-	line-height: 34px;
+	width: 180px;
+	height: 27px;
+	line-height: 27px;
 	transform-style:preserve-3d;
 	cursor: default;
 }
@@ -188,101 +189,101 @@ main aside{
 }
 .main-file li:nth-child(2){
 	left: 13px;
-	top: 36px;
+	top: 32px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(2deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(2).hover{
 	left: 11px;
-	top: 34px;
+	top: 30px;
 }
 .main-file li:nth-child(3){
 	left: 11px;
-	top: 70px;
+	top: 64px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(1.5deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(3).hover{
 	left: 9px;
-	top: 68px;
+	top: 62px;
 }
 .main-file li:nth-child(4){
 	left: 10px;
-	top: 104px;
+	top: 96px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(1deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(4).hover{
 	left: 8px;
-	top:102px;
+	top:94px;
 }
 .main-file li:nth-child(5){
 	left: 10px;
-	top: 138px;
+	top: 128px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(0deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(5).hover{
 	left: 8px;
-	top:136px;
+	top:126px;
 }
 .main-file li:nth-child(6){
 	left: 10px;
-	top: 172px;
+	top: 161px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(0deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(6).hover{
 	left: 8px;
-	top:170px;
+	top:159px;
 }
 .main-file li:nth-child(7){
 	left: 10px;
-	top: 206px;
+	top: 188px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(-1deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(7).hover{
 	left: 8px;
-	top:204px;
+	top:190px;
 }
 .main-file li:nth-child(8){
 	left: 11px;
-	top: 240px;
+	top: 225px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(-1.5deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(8).hover{
 	left: 9px;
-	top:238px;
+	top:223px;
 }
 .main-file li:nth-child(9){
 	left: 13px;
-	top: 274px;
+	top: 258px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(-2deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(9).hover{
 	left: 11px;
-	top:272px;
+	top:255px;
 }
 .main-file li:nth-child(10){
 	left: 15px;
-	top: 308px;
+	top: 287px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(-2deg); /* Safari and Chrome */
 }
 .main-file li:nth-child(10).hover{
 	left: 13px;
-	top:306px;
+	top:285px;
 }
 /*主要内容*/
 main article{
 	position: absolute;
-	top: 80px;
+	top: 65px;
 	right: 30px;
-	width: 350px;
-	height: 350px;
+	width: 320px;
+	height: 320px;
 	transform-style:preserve-3d;
 	transform: rotateY(0.5deg);
 	-webkit-transform: rotateY(0.5deg); /* Safari and Chrome */
@@ -299,8 +300,8 @@ main article{
 	border: none;
 	padding: 0;
 	outline: 0;
-	width: 150px;
-	height: 220px; 
+	width: 130px;
+	height: 200px; 
 }
 .main-text{
 	display: block;

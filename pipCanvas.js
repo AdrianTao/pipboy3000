@@ -12,28 +12,18 @@ PipCanvas.prototype = {
 	//初始化
 	init:function(){
 		this.canvas = document.getElementsByTagName('canvas')[0];
-		this.canvas.width = window.innerWidth;
-		this.canvas.height = window.innerWidth*this.proportion;
+		this.canvas.width = 1280;
+		this.canvas.height = 720;
 		//显示器宽度高度以及坐标
-		this.dWdith = this.canvas.width * 0.49;
+		this.dWdith = this.canvas.width * 0.48;
 		this.dHeight = this.dWdith * 0.76;
-		this.dTop = this.canvas.width * this.proportion * 0.107;
+		this.dTop = 77.04;
 		this.dLeft = this.canvas.width * 0.31;
 
 		this.ctx = this.canvas.getContext('2d');
 		this.bg = "images/pipboy3000.png";
 
 		this.display();
-		this.pipBoyBackground();
-	},
-	pipBoyBackground:function(){
-		var bg = new Image();
-		bg.src = this.bg;
-
-		var that = this;
-		bg.onload = function(){
-			that.ctx.drawImage(bg,0,0,that.canvas.width,that.canvas.width*that.proportion);
-		}
 	},
 	display:function(){
 		this.displayBg();//显示背景
