@@ -7,11 +7,26 @@
 		*{margin: 0;padding: 0;color: rgba(30,255,140,0.7);}
 		#grid{
 			position: absolute;
+			display: none;
 			z-index: 1;
 		}
 		#pipboy{
 			position: absolute;
+			top: 0;left: 0;bottom: 0;right: 0;
+			margin: 0 auto;
 			z-index: 10;
+		}
+		.bg{
+			width: 1197px;
+			height: 706px;
+			background:url(images/pipboy3.png);
+			z-index: 100;
+			position: absolute;
+			top: 0;left: 0;bottom: 0;right: 0;
+			margin: 0 auto;
+		}
+		body{
+			background-color: black;
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="displayStyle.css">
@@ -30,7 +45,8 @@
 	</script>
 </head>
 <body>
-	<main id="display">
+	<div class="bg">
+		<main id="display">
 		<header>
 			<h1 class="header-title">STATS</h1>
 			<ul class="header-info">
@@ -69,10 +85,10 @@
 		<nav>
 			<ul>
 				<li class="hover">状态</li>
-				<li>属性</li>
-				<li>技能</li>
-				<li>照片</li>
-				<li>联系方式</li>
+				<li class="hover">属性</li>
+				<li class="hover">技能</li>
+				<li class="hover">照片</li>
+				<li class="hover">联系方式</li>
 			</ul>
 		</nav>
 	</main>
@@ -81,6 +97,7 @@
 		<button class="items"></button>
 		<button class="data"></button>
 	</nav>
+	</div>
 	<canvas id="pipboy">??</canvas>
 	<canvas id="grid" width="706" height="537"></canvas>
 	<script type="text/javascript" src="grid.js"></script>
