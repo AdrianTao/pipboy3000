@@ -4,7 +4,7 @@
 	<title>pip-boy</title>
 	<meta charset="utf-8">
 	<style type="text/css">
-		*{margin: 0;padding: 0;color: rgba(30,255,140,0.7);}
+		*{margin: 0;padding: 0;color: rgba(30,255,140,0.7);font-family: "Microsoft YaHei";}
 		#grid{
 			position: absolute;
 			display: none;
@@ -46,60 +46,114 @@
 </head>
 <body>
 	<div class="bg">
-		<main id="display">
-		<header>
-			<h1 class="header-title">STATS</h1>
-			<ul class="header-info">
-				<li>LVL 20</li>
-				<li>HP 500/500</li>
-				<li>AP 230/300</li>
-				<li>XP 1230/2000</li>
-			</ul>
-		</header>
-		<main>
-			<aside>
-				<ul class="main-file">
-					<li class="hover">姓名</li>
-					<li>性别</li>
-					<li>民族</li>
-					<li>出生日期</li>
-					<li>身高/体重</li>
-					<li>籍贯</li>
-					<li>学校/专业</li>
-					<li>求职意向</li>
-					<li>目前状况</li>
-					<li></li>
+		<div id="display">
+			<header>
+				<h1 class="header-title">STATS</h1>
+				<ul class="header-info">
+					<li>LVL 20</li>
+					<li>HP 500/500</li>
+					<li>AP 230/300</li>
+					<li>XP 1230/2000</li>
 				</ul>
-			</aside>
-			<article>
-				<section class="main-picture">
-					<a href=""><img src=""></a>
-				</section>
-				<section class="main-text">
-					<p>
-						陶俊
-					</p>
-				</section>
-			</article>
-		</main>
-		<nav>
-			<ul>
-				<li class="hover">状态</li>
-				<li class="hover">属性</li>
-				<li class="hover">技能</li>
-				<li class="hover">照片</li>
-				<li class="hover">联系方式</li>
-			</ul>
+			</header>
+			<main>
+				<!--
+				<aside>
+					<ul class="main-file">
+						<li class="hover">姓名</li>
+						<li>性别</li>
+						<li>民族</li>
+						<li>出生日期</li>
+						<li>身高/体重</li>
+						<li>籍贯</li>
+						<li>学校/专业</li>
+						<li>求职意向</li>
+						<li>目前状况</li>
+						<li></li>
+					</ul>
+				</aside>
+				<article class="main-content">
+					<figure class="main-picture">
+						<a href=""><img src=""></a>
+					</figure>
+					<section class="main-text">
+						<p>
+							陶俊
+						</p>
+					</section>
+				</article>
+				-->
+				<aside>
+					<ul class="main-page">
+						<li class="on">状态</li>
+						<li>说明</li>
+					</ul>
+				</aside>
+				<p class="main-detailed" style="display:none">
+					该页面由陶俊在2016年7月制作<br>哪位HR看上了赶紧联系我啊！点击联系方式↘<br>
+					点击 ITEMS 可以看到我的一些小作品<br>
+					点击 DATA 控制背景乐等设置
+				</p>
+				<figure class="main-people" style="display:block">
+					<div class="people-header">
+						<div class="people-header-face"></div>
+						<span class="img"></span>
+						<span class="blood">
+							<div></div>
+						</span>
+					</div>
+					<div class="people-body">
+						<span class="img"></span>
+						<span class="blood">
+							<div></div>
+						</span>
+					</div>
+					<div class="people-hand-left">
+						<span class="img"></span>
+						<span class="blood">
+							<div></div>
+						</span>
+					</div>
+					<div class="people-hand-right">
+						<span class="img"></span>
+						<span class="blood">
+							<div></div>
+						</span>
+					</div>
+					<div class="people-foot-left">
+						<span class="img"></span>
+						<span class="blood">
+							<div></div>
+						</span>
+					</div>
+					<div class="people-foot-right">
+						<span class="img"></span>
+						<span class="blood">
+							<div></div>
+						</span>
+					</div>
+					<div class="main-name">陶俊 - Level 20</div>
+				</figure>
+			</main>
+			<nav>
+				<ul>
+					<li class="on">状态</li>
+					<li>属性</li>
+					<li>技能</li>
+					<li>照片</li>
+					<li>联系方式</li>
+				</ul>
+			</nav>
+		</div>
+		<nav id="toggle">
+			<button class="stats"></button>
+			<button class="items"></button>
+			<button class="data"></button>
 		</nav>
-	</main>
-	<nav id="toggle">
-		<button class="stats"></button>
-		<button class="items"></button>
-		<button class="data"></button>
-	</nav>
 	</div>
 	<canvas id="pipboy">??</canvas>
 	<canvas id="grid" width="706" height="537"></canvas>
+	<script type="text/javascript" src=myAjax.js></script>
 	<script type="text/javascript" src="grid.js"></script>
 	<script type="text/javascript" src="pipCanvas.js"></script>
 	<script type="text/javascript" src="pipboy3000.js"></script>

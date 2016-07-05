@@ -15,9 +15,9 @@ PipCanvas.prototype = {
 		this.canvas.width = 1280;
 		this.canvas.height = 720;
 		//显示器宽度高度以及坐标
-		this.dWdith = this.canvas.width * 0.48;
-		this.dHeight = this.dWdith * 0.76;
-		this.dTop = 77.04;
+		this.dWdith = 614.4;
+		this.dHeight = 480;
+		this.dTop = 65;
 		this.dLeft = this.canvas.width * 0.31;
 
 		this.ctx = this.canvas.getContext('2d');
