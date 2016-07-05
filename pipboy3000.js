@@ -17,7 +17,7 @@ PipBoy.prototype = {
 			data:null,
 			success: function(response){
 				this.data = JSON.parse(response,function(key,value){
-					if(key === 'STATS') return value;
+					if(key === 'STATS') return STATS;
 				});
 			}
 		})
