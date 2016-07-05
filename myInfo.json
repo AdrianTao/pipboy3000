@@ -1,13 +1,7 @@
 {
 	"STATS":[
 		{
-			"title":"状态",
-			"page":[
-				{"title":"状态","img":""},
-				{"title":"说明","img":"","text":"该页面由陶俊在2016年7月制作<br>哪位HR看上了赶紧联系我啊！点击联系方式↘<br>
-					点击 ITEMS 可以看到我的一些小作品<br>
-					点击 DATA 控制背景乐等设置"}
-			]
+			"title":"状态"
 		},
 		{
 			"title":"属性",
@@ -53,14 +47,14 @@
 	],
 	"ITEMS":[
 		{
-			"title":"拖动效果",
+			"title":"拖动",
 			"list":[
 				{"title":"可拖动并改变大小的窗体","url":"drag/01/index.html","text":"可拖动并改变大小的窗体","img":""},
 				{"title":"滑动验证","url":"drag/02/index.html", "text":"滑动验证","img":""}
 			]
 		},
 		{
-			"title":"图片轮换",
+			"title":"轮播",
 			"list":[
 				{"title":"仿淘宝首页图片轮换","url":"slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
 				{"title":"多个图片轮换","url":"slide/02/index.html", "text":"多个图片轮换","img":""},
@@ -74,7 +68,7 @@
 			]
 		},
 		{
-			"title":"应用游戏",
+			"title":"游戏",
 			"list":[
 				{"title":"web计算器","url":"calculator/index.html", "text":"web计算器","img":""},
 				{"title":"贪吃蛇","url":"snake/index.html","text":"贪吃蛇小游戏","img":""},

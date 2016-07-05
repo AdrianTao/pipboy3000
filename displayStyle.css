@@ -1,20 +1,22 @@
 #toggle{
 	z-index: 20;
 	position: absolute;
-	left: 650px;
-	bottom: 2px;
+	left: 520px;
+	bottom: 85px;
 	display: block;
-	width: 300px;
+	width: 250px;
 	height: 100px;
-	border:1px solid #6666FF;
 }
 #toggle button{
+	position: relative;
+	opacity: 0;
 	top: 20px;
-	width: 70px;
-	height: 70px;
-	border: 1px solid #6666FF;
+	left: 10px;
+	width: 60px;
+	height: 60px;
 	border-radius: 70px;
 	cursor: pointer;
+	margin: 10px;
 }
 
 #display{
@@ -115,7 +117,7 @@ header ul{
 	transform: rotateY(-1deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(-1deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
-#display nav li:nth-child(2):hover{
+#display nav li:nth-child(2):hover,#display nav li:nth-child(2).on{
 	bottom: 43px;
 	left: 179px;
 }
@@ -125,7 +127,7 @@ header ul{
 	transform: rotateX(-0.5deg);
 	-webkit-transform:rotateX(-0.5deg);
 }
-#display nav li:nth-child(3):hover{
+#display nav li:nth-child(3):hover,#display nav li:nth-child(3).on{
 	bottom: 41px;
 	left: 274px;
 
@@ -138,7 +140,7 @@ header ul{
 	transform: rotateY(0.5deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(0.5deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
-#display nav li:nth-child(4):hover{
+#display nav li:nth-child(4):hover,#display nav li:nth-child(4).on{
 	bottom: 43px;
 	left: 374px;
 }
@@ -152,7 +154,7 @@ header ul{
 	transform: rotateY(1deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(1deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
-#display nav li:nth-child(5):hover{
+#display nav li:nth-child(5):hover,#display nav li:nth-child(5).on{
 	bottom: 48px;
 	left: 480px;
 }

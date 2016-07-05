@@ -6,31 +6,108 @@ function PipBoy(){
 	this.toggle = null;//下方三个实体按键stats items data
 	this.data = [];
 	this.myjson = null;
+	this.stats = null;
 }
 PipBoy.prototype = {
 	//初始化
 	init:function(){
 		this.box = document.getElementById('display');
 		this.data = JSON.parse(this.myjson);
-		this.header = document.getElementsByTagName('header')[0];
+		this.header = document.getElementsByClassName("header-title")[0];
 		this.main = document.getElementsByTagName('main')[0];
 		this.nav = document.getElementsByTagName('nav')[0];
 
-		this.mouseAction();
+		this.toggleAction();
+		this.stats.onclick();
 	},
 	//生成列表排版(列图文)
-	list:function(){
+	list:function(obj){
 		document.getElementById("home").style.display = "none";
+		document.getElementById("list").style.display = "block";
+		var listBox = document.getElementById("list");
+		listBox.innerHTML = "";
+		var aside = document.createElement("aside");
+		var ul = "";
+		for(var i=0 ; i<obj.length ; i++){
+			if(i==0){
+				ul += "<ul class='main-file'><li>" + obj[i].title + "</li>";
+			}else{
+				ul += "<li>" + obj[i].title + "</li>";
+			}
+			if(i == 9){
+				ul += "</ul>";
+			}
+		}
+		aside.innerHTML = ul;
+		listBox.appendChild(aside);
 	},
-	mouseAction:function(){
-		var stats = document.getElementsByClassName('stats')[0];
-		var items = document.getElementsByClassName('items')[0];
-		var data = document.getElementsByClassName('data')[0];
-
+	//屏幕中 五个导航点击事件
+	navAction:function(){
+		var btn = this.nav.getElementsByTagName("li");
+		var obj = this.data[this.toggle];
 		var that = this;
-		stats.onclick = function(){
+		for(var i=0 ; i<btn.length ; i++){
+			btn[i].index = i;
+			btn[i].onclick = function(){
+				for(var i=0 ; i<btn.length ; i++){
+					btn[i].className = "";
+				}
+				btn[this.index].className = "on";
+				if(that.toggle == "STATS" && this.index == 0){
+					document.getElementById("list").style.display = "none";
+					document.getElementById("home").style.display = "block";
+				}else{
+					that.list(obj[this.index].list);
+				}
+			}
+		}
+		btn[0].onclick();
+	},
+	//下方三按键的点击事件
+	toggleAction:function(){
+		this.stats = document.getElementsByClassName('stats')[0];
+		this.items = document.getElementsByClassName('items')[0];
+		var data = document.getElementsByClassName('data')[0];
+		var that = this;
+		this.stats.onclick = function(){
 			document.getElementById("list").style.display = "none";
 			document.getElementById("home").style.display = "block";
+			var obj = that.data.STATS;
+			that.header.innerHTML = "STATS";
+			var ul = "";
+			for(var i=0 ; i<obj.length ; i++){
+				if(i==0){
+					ul += "<ul><li class='on'>" + obj[i].title + "</li>";
+				}else{
+					ul += "<li>" + obj[i].title + "</li>";
+				}
+				if(i==obj.length-1){
+					ul += "</ul>";
+				}
+			}
+			that.nav.innerHTML = ul;
+			that.toggle = "STATS";//标明当前在第1个toggle
+			that.navAction();
+		}
+		this.items.onclick = function(){
+			document.getElementById("list").style.display = "block";
+			document.getElementById("home").style.display = "none";
+			var obj = that.data.ITEMS;
+			that.header.innerHTML = "ITEMS";
+			var ul = "";
+			for(var i=0 ; i<obj.length ; i++){
+				if(i==0){
+					ul += "<ul><li class='on'>" + obj[i].title + "</li>";
+				}else{
+					ul += "<li>" + obj[i].title + "</li>";
+				}
+				if(i==obj.length-1){
+					ul += "</ul>";
+				}
+			}
+			that.nav.innerHTML = ul;
+			that.toggle = "ITEMS";//标明当前在第2个toggle
+			that.navAction();
 		}
 	}
 }
@@ -79,7 +156,7 @@ addLoadEvent(function(){
 			]
 		},
 		{
-			"title":"联系",
+			"title":"联系方式",
 			"list":[
 				{"title":"手机","url":"","text":"13738367048","img":""},
 				{"title":"邮箱","url":"","text":"taojun1994@gmail.com","img":""},
@@ -89,18 +166,10 @@ addLoadEvent(function(){
 	],
 	"ITEMS":[
 		{
-			"title":"拖动效果",
+			"title":"拖动",
 			"list":[
 				{"title":"可拖动并改变大小的窗体","url":"drag/01/index.html","text":"可拖动并改变大小的窗体","img":""},
 				{"title":"滑动验证","url":"drag/02/index.html", "text":"滑动验证","img":""}
-			]
-		},
-		{
-			"title":"图片轮换",
-			"list":[
-				{"title":"仿淘宝首页图片轮换","url":"slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
-				{"title":"多个图片轮换","url":"slide/02/index.html", "text":"多个图片轮换","img":""},
-				{"title":"仿亚马逊首页图片轮换","url":"slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
 			]
 		},
 		{
@@ -109,8 +178,8 @@ addLoadEvent(function(){
 				{"title":"移动端效果展示","url":"mobile/index.html","text":"移动端效果展示","img":""}
 			]
 		},
-		{
-			"title":"应用游戏",
+				{
+			"title":"游戏",
 			"list":[
 				{"title":"web计算器","url":"calculator/index.html", "text":"web计算器","img":""},
 				{"title":"贪吃蛇","url":"snake/index.html","text":"贪吃蛇小游戏","img":""},
@@ -124,11 +193,17 @@ addLoadEvent(function(){
 				{"title":"页码效果","url":"other/page/index2.html","text":"常见于贴吧等论坛","img":""},
 				{"title":"简易评分","url":"other/1/index.html", "text":"简易评分","img":""}
 			]
+		},
+		{
+			"title":"图片轮播",
+			"list":[
+				{"title":"仿淘宝首页图片轮换","url":"slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
+				{"title":"多个图片轮换","url":"slide/02/index.html", "text":"多个图片轮换","img":""},
+				{"title":"仿亚马逊首页图片轮换","url":"slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
+			]
 		}
 	],
-	"DATA":[
-		
-	]
+	"DATA":[]
 });
 	pipBoy.init();
 });
