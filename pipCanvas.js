@@ -27,7 +27,7 @@ PipCanvas.prototype = {
 	},
 	//开机动画
 	helloWorld:function(){
-		
+
 	},
 	display:function(){
 		this.displayBg();//显示背景
@@ -97,10 +97,8 @@ PipCanvas.prototype = {
 	}
 }
 addLoadEvent(function(){
-	setTimeout(function(){
-		document.getElementsByClassName("welcome")[0].style.display = "none";
-		var pipBoy = new PipBoy();
-		var pip = new PipCanvas();
-		pip.init();
-	},3000);
+	document.getElementsByClassName("welcome")[0].style.display = "none";
+	var pipBoy = new PipBoy();
+	var pip = new PipCanvas();
+	pip.init();
 })
