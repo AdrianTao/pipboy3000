@@ -93,6 +93,8 @@ PipCanvas.prototype = {
 	}
 }
 addLoadEvent(function(){
+	document.getElementsByClassName("welcome")[0].style.display = "none";
+	var pipBoy = new PipBoy();
 	var pip = new PipCanvas();
 	pip.init();
 })

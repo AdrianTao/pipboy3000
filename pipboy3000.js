@@ -168,7 +168,6 @@ PipBoy.prototype = {
 	}
 }
 addLoadEvent(function(){
-	var pipBoy = new PipBoy();
 	pipBoy.myjson = JSON.stringify({
 	"STATS":[
 		{
@@ -246,6 +245,8 @@ addLoadEvent(function(){
 		{
 			"title":"其他",
 			"list":[
+				{"title":"之前的简历","url":"http://adriantao.github.io","text":"之前的简历,模仿京东的页面,做了一半,没做了。。(尴尬)","img":""},
+				{"title":"作品集","url":"http://adriantao.github.io/Demo","text":"小作品合集","img":""},
 				{"title":"canvas时钟","url":"http://adriantao.github.io/Demo/clock/index.html","text":"用canvas画板画出来的卡通时钟","img":""},
 				{"title":"页码效果","url":"http://adriantao.github.io/Demo/other/page/index2.html","text":"常见于贴吧等论坛","img":""},
 				{"title":"简易评分","url":"http://adriantao.github.io/Demo/other/1/index.html", "text":"简易评分","img":""}
