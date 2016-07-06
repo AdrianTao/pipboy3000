@@ -25,6 +25,10 @@ PipCanvas.prototype = {
 
 		this.display();
 	},
+	//开机动画
+	helloWorld:function(){
+		
+	},
 	display:function(){
 		this.displayBg();//显示背景
 		this.displayLine();//显示线条
@@ -93,8 +97,10 @@ PipCanvas.prototype = {
 	}
 }
 addLoadEvent(function(){
-	document.getElementsByClassName("welcome")[0].style.display = "none";
-	var pipBoy = new PipBoy();
-	var pip = new PipCanvas();
-	pip.init();
+	setTimeout(function(){
+		document.getElementsByClassName("welcome")[0].style.display = "none";
+		var pipBoy = new PipBoy();
+		var pip = new PipCanvas();
+		pip.init();
+	},3000);
 })
