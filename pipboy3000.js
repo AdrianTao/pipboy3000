@@ -168,6 +168,7 @@ PipBoy.prototype = {
 	}
 }
 addLoadEvent(function(){
+	var pipBoy = new PipBoy();
 	pipBoy.myjson = JSON.stringify({
 	"STATS":[
 		{
