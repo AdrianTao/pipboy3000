@@ -15,7 +15,6 @@
 	width: 60px;
 	height: 60px;
 	border-radius: 70px;
-	cursor: pointer;
 	margin: 10px;
 }
 
@@ -93,7 +92,6 @@ header ul{
 	list-style-type: none;
 	text-align: center;
 	line-height: 30px;
-	cursor: pointer;
 }
 #display .hover,#display .on,#display nav li:hover{
 	border:2px solid rgba(30,255,140,0.9); 
@@ -144,7 +142,6 @@ header ul{
 	bottom: 43px;
 	left: 374px;
 }
-
 #display nav li:nth-child(5){
 	font-size: 14px;
 	bottom: 50px;
@@ -178,7 +175,6 @@ header ul{
 	height: 27px;
 	line-height: 27px;
 	transform-style:preserve-3d;
-	cursor: default;
 }
 .main-file li:nth-child(1){
 	left: 15px;
