@@ -54,14 +54,6 @@
 			]
 		},
 		{
-			"title":"轮播",
-			"list":[
-				{"title":"仿淘宝首页图片轮换","url":"slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
-				{"title":"多个图片轮换","url":"slide/02/index.html", "text":"多个图片轮换","img":""},
-				{"title":"仿亚马逊首页图片轮换","url":"slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
-			]
-		},
-		{
 			"title":"移动端",
 			"list":[
 				{"title":"移动端效果展示","url":"mobile/index.html","text":"移动端效果展示","img":""}
@@ -81,6 +73,14 @@
 			"list":[
 				{"title":"页码效果","url":"other/page/index2.html","text":"常见于贴吧等论坛","img":""},
 				{"title":"简易评分","url":"other/1/index.html", "text":"简易评分","img":""}
+			]
+		},
+		{
+			"title":"图片轮播",
+			"list":[
+				{"title":"仿淘宝首页图片轮换","url":"slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
+				{"title":"多个图片轮换","url":"slide/02/index.html", "text":"多个图片轮换","img":""},
+				{"title":"仿亚马逊首页图片轮换","url":"slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
 			]
 		}
 	],
