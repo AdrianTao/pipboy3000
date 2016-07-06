@@ -59,7 +59,7 @@ PipBoy.prototype = {
 				if(obj[this.index].url == ""){
 					figure.innerHTML = "<a href='JavaScript:;'><img src='" + obj[this.index].img + "'></a>"
 				}else{
-					figure.innerHTML = "<a href='" + obj[this.index].url + "'><img src='" + obj[this.index].img + "'></a>";
+					figure.innerHTML = "<a href='" + obj[this.index].url + "' target='_blank'><img src='" + obj[this.index].img + "' title='点击图片查看demo'></a>";
 				}
 				section.innerHTML = "<p>" + obj[this.index].text + "</p>";
 			}
@@ -168,7 +168,6 @@ PipBoy.prototype = {
 	}
 }
 addLoadEvent(function(){
-	var pipBoy = new PipBoy();
 	pipBoy.myjson = JSON.stringify({
 	"STATS":[
 		{
@@ -195,13 +194,13 @@ addLoadEvent(function(){
 		{
 			"title":"技能",
 			"list":[
-				{"title":"JavaScript","url":"","text":"熟练使用js","img":""},
+				{"title":"JavaScript","url":"","text":"熟练使用js,了解jquery.","img":""},
 				{"title":"HTML","url":"","text":"熟练掌握html,了解html5新特性。","img":""},
 				{"title":"CSS","url":"","text":"熟练掌握css,了解css3新特性。","img":""},
 				{"title":"数据结构","url":"","text":"了解基本数据结构,曾经使用C语言实现过","img":""},
 				{"title":"C语言","url":"","text":"基本了解c","img":""},
-				{"title":"Ajax","url":"","text":"懂得使用ajax传递/获取信息","img":""},
-				{"title":"json","url":"","text":"了解json格式","img":""}
+				{"title":"Ajax","url":"","text":"懂得使用ajax传递/获取信息,懂得封装ajax","img":""},
+				{"title":"json","url":"","text":"了解json格式,懂得使用传递数据","img":""}
 			]
 		},
 		{
@@ -224,38 +223,41 @@ addLoadEvent(function(){
 		{
 			"title":"拖动",
 			"list":[
-				{"title":"可拖动并改变大小的窗体","url":"drag/01/index.html","text":"可拖动并改变大小的窗体","img":""},
-				{"title":"滑动验证","url":"drag/02/index.html", "text":"滑动验证","img":""}
+				{"title":"可拖动并改变大小的窗体","url":"http://adriantao.github.io/Demo/drag/01/index.html","text":"可拖动并改变大小的窗体,限制了拖动缩放大小的范围","img":""},
+				{"title":"滑动验证","url":"http://adriantao.github.io/Demo/drag/02/index.html", "text":"滑动验证","img":""}
 			]
 		},
 		{
 			"title":"移动端",
 			"list":[
-				{"title":"移动端效果展示","url":"mobile/index.html","text":"移动端效果展示","img":""}
+				{"title":"移动端效果展示","url":"http://adriantao.github.io/Demo/mobile/pc-index2.html","text":"pc端可用鼠标点按切换标签,移动端可以用滑动切换标签","img":""}
 			]
 		},
 				{
 			"title":"游戏",
 			"list":[
-				{"title":"web计算器","url":"calculator/index.html", "text":"web计算器","img":""},
-				{"title":"贪吃蛇","url":"snake/index.html","text":"贪吃蛇小游戏","img":""},
-				{"title":"俄罗斯方块","url":"Tetris/index.html","text":"经典的俄罗斯方块游戏","img":""},
-				{"title":"2048","url":"2048/index.html","text":"前几年非常火热的2048","img":""}
+				{"title":"web计算器","url":"http://adriantao.github.io/Demo/calculator/index.html", "text":"常见的科学计算器,可计算连续的运算式，并且会按符号优先级计算","img":""},
+				{"title":"贪吃蛇","url":"http://adriantao.github.io/Demo/snake/index.html","text":"贪吃蛇小游戏,上下左右方向键控制","img":""},
+				{"title":"俄罗斯方块","url":"http://adriantao.github.io/Demo/Tetris/index.html","text":"经典的俄罗斯方块游戏,上下左右方向键控制","img":""},
+				{"title":"2048","url":"http://adriantao.github.io/Demo/2048/index.html","text":"2048,相同的数字碰撞后会合并,当无法合并时,游戏结束.上下左右方向键控制","img":""}
 			]
 		},
 		{
 			"title":"其他",
 			"list":[
-				{"title":"页码效果","url":"other/page/index2.html","text":"常见于贴吧等论坛","img":""},
-				{"title":"简易评分","url":"other/1/index.html", "text":"简易评分","img":""}
+				{"title":"之前的简历","url":"http://adriantao.github.io","text":"之前的简历,模仿京东的页面,做了一半,没做了。。(尴尬)","img":""},
+				{"title":"作品集","url":"http://adriantao.github.io/Demo","text":"小作品合集","img":""},
+				{"title":"canvas时钟","url":"http://adriantao.github.io/Demo/clock/index.html","text":"用canvas画板画出来的卡通时钟","img":""},
+				{"title":"页码效果","url":"http://adriantao.github.io/Demo/other/page/index2.html","text":"常见于贴吧等论坛","img":""},
+				{"title":"简易评分","url":"http://adriantao.github.io/Demo/other/1/index.html", "text":"简易评分","img":""}
 			]
 		},
 		{
 			"title":"图片轮播",
 			"list":[
-				{"title":"仿淘宝首页图片轮换","url":"slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
-				{"title":"多个图片轮换","url":"slide/02/index.html", "text":"多个图片轮换","img":""},
-				{"title":"仿亚马逊首页图片轮换","url":"slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
+				{"title":"仿淘宝首页图片轮换","url":"http://adriantao.github.io/Demo/slide/01/index5.html", "text":"仿淘宝首页图片轮换","img":""},
+				{"title":"多个图片轮换","url":"http://adriantao.github.io/Demo/slide/02/index.html", "text":"多个图片轮换","img":""},
+				{"title":"仿亚马逊首页图片轮换","url":"http://adriantao.github.io/Demo/slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
 			]
 		}
 	],
