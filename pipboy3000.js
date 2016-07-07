@@ -18,8 +18,33 @@ PipBoy.prototype = {
 		this.nav = document.getElementsByTagName('nav')[0];
 
 		this.toggleAction();
+		this.peopleHover();
 		this.stats.onclick();
 	},
+	//
+	peopleHover:function(){
+		var people = document.getElementsByClassName("main-people")[0].getElementsByTagName("div");
+		var timer = null;
+		for(var i=0 ; i<people.length ; i++){
+			people[i].onmouseover = function(){
+				var opa = 100;
+				var speed = 2;
+				var that = this;
+				timer = setInterval(function(){
+					if(opa >= 100 || opa <= 0){
+						speed = -speed;
+					}
+					opa += speed;
+					that.style.opacity = opa/100;
+				},20);
+			}
+			people[i].onmouseout = function(){
+				clearInterval(timer);
+				this.style.opacity = 1;
+			}
+		}
+	},
+	//主页两个页面切换
 	pageBtn:function(){
 		var home = document.getElementById("home");
 		var btn = home.getElementsByClassName("main-page")[0].getElementsByTagName("li");
