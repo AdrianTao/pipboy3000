@@ -33,11 +33,9 @@ PipCanvas.prototype = {
 
 		this.ctx = this.canvas.getContext('2d');
 		this.bg = "images/pipboy3000.png";
-
-		this.helloWorld();//开机动画
 	},
 	//开机动画
-	helloWorld:function(){
+	helloWorld:function(callback){
 		this.ctx.save();
 		var that = this;
 		var raf;
@@ -85,7 +83,7 @@ PipCanvas.prototype = {
 		}
 		raf = setTimeout(draw,30);
 		this.ctx.restore();
-		function loadImg(){
+		function loadImg(callback){
 			document.getElementsByClassName("bg")[0].appendChild(that.pip);
 			setTimeout(function(){
 				that.pip.src = that.pip2.src;
@@ -93,6 +91,7 @@ PipCanvas.prototype = {
 				setTimeout(function(){
 					document.getElementsByClassName("bg")[0].removeChild(that.pip);
 					that.displayGrid();//显示框架
+					callback();
 				},1300);
 			},2000);
 		}
@@ -162,8 +161,3 @@ PipCanvas.prototype = {
 
 	}
 }
-addLoadEvent(function(){
-	document.getElementsByClassName("welcome")[0].style.display = "none";
-	var pip = new PipCanvas();
-	pip.init();
-})

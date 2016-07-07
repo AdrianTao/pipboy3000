@@ -165,5 +165,25 @@
 	<script type="text/javascript" src="grid.js"></script>
 	<script type="text/javascript" src="pipCanvas.js"></script>
 	<script type="text/javascript" src="pipboy3000.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			ajax({
+				type:"get",
+				url:"myInfo.json",
+				async:true,
+				data:null,
+				success:function(response){
+					document.getElementsByClassName("welcome")[0].style.display = "none";
+					var canvas = new PipCanvas();
+					var pipBoy = new PipBoy();
+					pipBoy.data = JSON.parse(response);
+					canvas.init();
+					canvas.helloWorld(function(){
+						
+					});
+				}
+			});
+		}
+	</script>
 </body>
 </html>
