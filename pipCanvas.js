@@ -7,6 +7,8 @@ function PipCanvas(){
 	this.dHeight = null;//       高
 	this.dTop = null;//          y坐标
 	this.dLeft = null;//         x坐标
+	this.pip = null;
+	this.pip2 = null;
 }
 PipCanvas.prototype = {
 	//初始化
@@ -19,6 +21,15 @@ PipCanvas.prototype = {
 		this.dHeight = 480;
 		this.dTop = 65;
 		this.dLeft = this.canvas.width * 0.31;
+
+		this.pip = document.createElement("img");
+		this.pip.style.position = "absolute";
+		this.pip.style.left = "500px";
+		this.pip.style.top = "150px";
+		this.pip.style.zIndex = 100;
+		this.pip.src = "images/hello1.gif";
+		this.pip2 = new Image();
+		this.pip2.src = "images/hello2.gif";
 
 		this.ctx = this.canvas.getContext('2d');
 		this.bg = "images/pipboy3000.png";
@@ -75,18 +86,12 @@ PipCanvas.prototype = {
 		raf = setTimeout(draw,30);
 		this.ctx.restore();
 		function loadImg(){
-			var pip = document.createElement("img");
-			pip.style.position = "absolute";
-			pip.style.left = "500px";
-			pip.style.top = "150px";
-			pip.style.zIndex = 100;
-			pip.src = "images/hello1.gif";
-			document.getElementsByClassName("bg")[0].appendChild(pip);
+			document.getElementsByClassName("bg")[0].appendChild(that.pip);
 			setTimeout(function(){
-				pip.src = "images/hello2.gif";
-				pip.style.left = "520px";
+				that.pip.src = that.pip2.src;
+				that.pip.style.left = "520px";
 				setTimeout(function(){
-					document.getElementsByClassName("bg")[0].removeChild(pip);
+					document.getElementsByClassName("bg")[0].removeChild(that.pip);
 					that.displayGrid();//显示框架
 				},1300);
 			},2000);
