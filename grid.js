@@ -66,6 +66,3 @@ function grid(){
 	ctx.stroke();
 	ctx.restore();
 }
-addLoadEvent(function(){
-	grid();
-})
