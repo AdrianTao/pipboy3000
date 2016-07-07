@@ -258,7 +258,7 @@ header ul{
 }
 .main-file li:nth-child(9){
 	left: 13px;
-	top: 258px;
+	top: 257px;
 	transform: rotateY(-2deg);
 	-webkit-transform: rotateY(-2deg) rotateX(-2deg); /* Safari and Chrome */
 }
