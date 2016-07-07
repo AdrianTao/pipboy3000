@@ -76,6 +76,7 @@ PipCanvas.prototype = {
 			if(text.line == 0){
 				clearTimeout(draw);
 				loadImg();
+				that.displayGrid();
 			}else{
 				setTimeout(draw,30);
 			}
@@ -129,7 +130,6 @@ PipCanvas.prototype = {
 		this.ctx.fillStyle = shadowTop;
 		this.ctx.fillRect(this.dLeft,this.dTop,this.dLeft+this.dWdith,this.dTop+100);
 
-
 		this.ctx.restore();
 	},
 	//背景色
@@ -156,6 +156,5 @@ PipCanvas.prototype = {
 	displayGrid:function(){
 		var grid = document.getElementById("grid");
 		this.ctx.drawImage(grid,this.dLeft,this.dTop,this.dWdith,this.dHeight);
-		console.log(1111);
 	}
 }

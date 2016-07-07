@@ -179,8 +179,9 @@
 					pipBoy.data = JSON.parse(response);
 					pipcanvas.init();
 					pipcanvas.helloWorld(function(){
-						pipcanvas.displayGrid();
+						grid();
 						pipBoy.init();
+						pipcanvas.displayGrid();
 					});
 				}
 			});
