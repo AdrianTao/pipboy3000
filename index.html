@@ -178,9 +178,8 @@
 					var pipBoy = new PipBoy();
 					pipBoy.data = JSON.parse(response);
 					canvas.init();
-					canvas.helloWorld(function(){
-						
-					});
+					canvas.callback = PipBoy.init;
+					canvas.helloWorld();
 				}
 			});
 		}
