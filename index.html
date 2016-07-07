@@ -175,11 +175,12 @@
 				success:function(response){
 					document.getElementsByClassName("welcome")[0].style.display = "none";
 					var pipcanvas = new PipCanvas();
+					var pipBoy = new PipBoy();
+					pipBoy.data = JSON.parse(response);
 					pipcanvas.init();
 					pipcanvas.helloWorld(function(){
-						var pipBoy = new PipBoy();
-						pipBoy.data = JSON.parse(response);
 						pipBoy.init();
+						pipCanvas.displayGrid();
 					});
 				}
 			});

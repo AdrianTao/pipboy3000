@@ -90,7 +90,6 @@ PipCanvas.prototype = {
 				that.pip.style.left = "520px";
 				setTimeout(function(){
 					document.getElementsByClassName("bg")[0].removeChild(that.pip);
-					that.displayGrid();//显示框架
 					callback();
 				},1300);
 			},2000);
