@@ -20,6 +20,7 @@ PipBoy.prototype = {
 		this.toggleAction();
 		this.peopleHover();
 		this.stats.onclick();
+		this.box.style.display = "block";
 	},
 	//
 	peopleHover:function(){
@@ -193,9 +194,10 @@ PipBoy.prototype = {
 	}
 }
 addLoadEvent(function(){
-	var pipBoy = new PipBoy();
-	pipBoy.myjson = JSON.stringify({
-	"STATS":[
+	setTimeout(function(){
+		var pipBoy = new PipBoy();
+		pipBoy.myjson = JSON.stringify({
+		"STATS":[
 		{
 			"title":"状态",
 			"page":[
@@ -244,8 +246,8 @@ addLoadEvent(function(){
 				{"title":"github","url":"https://github.com/AdrianTao","text":"https://github.com/AdrianTao","img":""}
 			]
 		}
-	],
-	"ITEMS":[
+		],
+		"ITEMS":[
 		{
 			"title":"拖动",
 			"list":[
@@ -286,8 +288,9 @@ addLoadEvent(function(){
 				{"title":"仿亚马逊首页图片轮换","url":"http://adriantao.github.io/Demo/slide/03/index.html", "text":"仿亚马逊首页图片轮换","img":""}
 			]
 		}
-	],
-	"DATA":[]
-});
-	pipBoy.init();
+		],
+		"DATA":[]
+		});
+		pipBoy.init();
+	},4800);
 });

@@ -23,18 +23,79 @@ PipCanvas.prototype = {
 		this.ctx = this.canvas.getContext('2d');
 		this.bg = "images/pipboy3000.png";
 
-		this.display();
+		this.helloWorld();//开机动画
 	},
 	//开机动画
 	helloWorld:function(){
-
+		this.ctx.save();
+		var that = this;
+		var raf;
+		var text = {
+			text1 :[
+				"01010011010010101010100110010101010001101010101011",
+				"01010011010010101001010011010010010100110101010010",
+				"01010011011010011010100110001010100101010100101010"
+				],
+			x: 470,
+			y: 500,
+			start:500,
+			end:520,
+			line:20,
+			font:"20px serif",
+			color:"rgba(30,255,140,0.7)",
+			draw:function(){
+				that.ctx.font = this.font;
+				that.ctx.fillStyle = this.color;
+				for(var i=0 ; i<this.line ; i++){
+					if(this.y+i*20 < this.end){
+						that.ctx.fillText(this.text1[Math.floor(Math.random() * 3 + 0)],this.x,this.y+i*20);
+					}else{
+						break;
+					}
+				}
+			}
+		}
+		function draw(){
+			that.ctx.clearRect(that.dLeft,that.dTop-50, that.dWdith, that.dHeight);
+			that.display();
+			text.draw();
+			if(text.y > that.dTop){
+				text.y += -20;
+			}else if(text.y <= that.dTop){
+				text.line--;
+			}
+			if(text.line == 0){
+				clearTimeout(draw);
+				loadImg();
+				//that.displayGrid();//显示框架
+			}else{
+				setTimeout(draw,30);
+			}
+		}
+		raf = setTimeout(draw,30);
+		this.ctx.restore();
+		function loadImg(){
+			var pip = document.createElement("img");
+			pip.style.position = "absolute";
+			pip.style.left = "500px";
+			pip.style.top = "150px";
+			pip.style.zIndex = 100;
+			pip.src = "images/hello1.gif";
+			document.getElementsByClassName("bg")[0].appendChild(pip);
+			setTimeout(function(){
+				pip.src = "images/hello2.gif";
+				pip.style.left = "520px";
+				setTimeout(function(){
+					document.getElementsByClassName("bg")[0].removeChild(pip);
+					that.displayGrid();//显示框架
+				},1300);
+			},2000);
+		}
 	},
 	display:function(){
 		this.displayBg();//显示背景
 		this.displayLine();//显示线条
-
-		this.displayShadow();
-		this.displayGrid();//显示框架
+		this.displayShadow();//阴影
 	},
 	displayShadow:function(){
 		this.ctx.save();
@@ -98,7 +159,6 @@ PipCanvas.prototype = {
 }
 addLoadEvent(function(){
 	document.getElementsByClassName("welcome")[0].style.display = "none";
-	var pipBoy = new PipBoy();
 	var pip = new PipCanvas();
 	pip.init();
 })
