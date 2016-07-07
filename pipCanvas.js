@@ -76,7 +76,6 @@ PipCanvas.prototype = {
 			if(text.line == 0){
 				clearTimeout(draw);
 				loadImg();
-				//that.displayGrid();//显示框架
 			}else{
 				setTimeout(draw,30);
 			}
@@ -157,6 +156,6 @@ PipCanvas.prototype = {
 	displayGrid:function(){
 		var grid = document.getElementById("grid");
 		this.ctx.drawImage(grid,this.dLeft,this.dTop,this.dWdith,this.dHeight);
-
+		console.log(1111);
 	}
 }
