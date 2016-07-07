@@ -344,7 +344,7 @@ header ul{
 	height: 30px;
 	position: absolute;
 	margin:auto;
-	left: 0;bottom: -30px;right: 0;
+	left: 0;bottom: -40px;right: 0;
 }
 .main-detailed{
 	position: absolute;
@@ -355,9 +355,8 @@ header ul{
 	top: 0;bottom: 0;left: 0;right: 0;
 }
 .main-people{
-	display: block;
 	position: absolute;
-	margin:85px auto;
+	margin:80px auto;
 	top: 0;left: 0;bottom: 0;right: 0;
 	width: 320px;
 	height: 280px;
@@ -370,7 +369,7 @@ header ul{
 	height: 100px;
 	margin:-2px auto;
 	top: 0;left: 0;bottom: 0;right: 0;
-	background: url(images/interfaceshared1.png) -510px -510px no-repeat;
+	background: url(images/head.png) no-repeat;
 }
 .people-header .blood{
 	left: 120px;
@@ -380,7 +379,7 @@ header ul{
 	border: 2px solid rgb(30,255,140);
 	border-bottom: 0;
 }
-.people-header .blood div{
+.people-header .blood span{
 	width: 56px;
 	height: 11px;
 	margin: 2px;
@@ -390,26 +389,26 @@ header ul{
 	position: absolute;
 	width: 70px;
 	height: 70px;
-	margin:15px auto;
+	margin:30px auto;
 	top: 0;left: 0;bottom: 0;right: 0;
-	background: url(images/interfaceshared1.png) -830px -690px no-repeat;
+	background: url(images/face.png) no-repeat;
 }
 .people-body .img{
 	width: 100px;
 	height: 100px;
-	margin:86px auto;
-	left: 0;right: 0;
-	background: url(images/interfaceshared1.png) -140px -640px no-repeat;
+	margin:88px auto;
+	left: -25px;right: 0;
+	background: url(images/body.png) no-repeat;
 }
 .people-body .blood{
 	left: 120px;
-	top: 101px;
+	top: 105px;
 	width: 60px;
 	height: 13px;
 	border: 2px solid rgb(30,255,140);
 	border-bottom: 0;
 }
-.people-body .blood div{
+.people-body .blood span{
 	width: 56px;
 	height: 11px;
 	margin: 2px;
@@ -418,19 +417,19 @@ header ul{
 .people-hand-left .img{
 	width: 100px;
 	height: 90px;
-	margin:56px auto;
-	left: 13px;
-	background: url(images/interfaceshared1.png) -380px -617px no-repeat;
+	margin:86px auto;
+	left: 5px;
+	background: url(images/handLeft.png) no-repeat;
 }
 .people-hand-left .blood{
 	width: 90px;
 	height: 15px;
-	top: 40px;
+	top: 50px;
 	border-left: 2px solid rgb(30,255,140);  
 	background: url(images/arrow.png) -160px -1px no-repeat;
 	background-size: 280%;
 }
-.people-hand-left .blood div{
+.people-hand-left .blood span{
 	position: absolute;
 	top: 4px;
 	left: 2px;
@@ -442,20 +441,20 @@ header ul{
 .people-hand-right .img{
 	width: 100px;
 	height: 100px;
-	margin:58px auto;
-	right: 27px;
-	background: url(images/interfaceshared1.png) -645px -611px no-repeat;
+	margin:88px auto;
+	right: 32px;
+	background: url(images/handRight.png) no-repeat;
 }
 .people-hand-right .blood{
 	width: 90px;
 	height: 15px;
-	top: 40px;
+	top: 50px;
 	right: 10px;
 	border-right: 2px solid rgb(30,255,140);  
 	background: url(images/arrow.png) -7px -1px no-repeat;
 	background-size: 280%;
 }
-.people-hand-right .blood div{
+.people-hand-right .blood span{
 	position: absolute;
 	top: 4px;
 	right: 2px;
@@ -466,10 +465,10 @@ header ul{
 
 .people-foot-left .img{
 	width: 110px;
-	height: 100px;
-	margin:176px auto;
+	height: 110px;
+	margin:175px auto;
 	left: 60px;
-	background: url(images/interfaceshared1.png) -896px -520px no-repeat;
+	background: url(images/footLeft.png) no-repeat;
 }
 .people-foot-left .blood{
 	width: 90px;
@@ -480,7 +479,7 @@ header ul{
 	background: url(images/arrow.png) -160px -1px no-repeat;
 	background-size: 280%;
 }
-.people-foot-left .blood div{
+.people-foot-left .blood span{
 	position: absolute;
 	top: 4px;
 	left: 2px;
@@ -490,10 +489,10 @@ header ul{
 }
 .people-foot-right .img{
 	width: 100px;
-	height: 100px;
+	height: 110px;
 	margin:178px auto;
-	right: 99px;
-	background: url(images/interfaceshared1.png) -744px -266px no-repeat;
+	right: 75px;
+	background: url(images/footRight.png) no-repeat;
 }
 .people-foot-right .blood{
 	width: 90px;
@@ -504,7 +503,7 @@ header ul{
 	background: url(images/arrow.png) -7px -1px no-repeat;
 	background-size: 280%;
 }
-.people-foot-right .blood div{
+.people-foot-right .blood span{
 	position: absolute;
 	top: 4px;
 	right: 2px;
