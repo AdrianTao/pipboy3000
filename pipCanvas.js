@@ -9,7 +9,6 @@ function PipCanvas(){
 	this.dLeft = null;//         x坐标
 	this.pip = null;
 	this.pip2 = null;
-	this.callback = null;
 }
 PipCanvas.prototype = {
 	//初始化
@@ -36,7 +35,7 @@ PipCanvas.prototype = {
 		this.bg = "images/pipboy3000.png";
 	},
 	//开机动画
-	helloWorld:function(this.callback){
+	helloWorld:function(callback){
 		this.ctx.save();
 		var that = this;
 		var raf;
@@ -84,7 +83,7 @@ PipCanvas.prototype = {
 		}
 		raf = setTimeout(draw,30);
 		this.ctx.restore();
-		function loadImg(this.callback){
+		function loadImg(){
 			document.getElementsByClassName("bg")[0].appendChild(that.pip);
 			setTimeout(function(){
 				that.pip.src = that.pip2.src;
@@ -92,7 +91,7 @@ PipCanvas.prototype = {
 				setTimeout(function(){
 					document.getElementsByClassName("bg")[0].removeChild(that.pip);
 					that.displayGrid();//显示框架
-					that.callback();
+					callback();
 				},1300);
 			},2000);
 		}

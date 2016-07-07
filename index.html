@@ -174,12 +174,11 @@
 				data:null,
 				success:function(response){
 					document.getElementsByClassName("welcome")[0].style.display = "none";
-					var canvas = new PipCanvas();
+					var pipcanvas = new PipCanvas();
 					var pipBoy = new PipBoy();
 					pipBoy.data = JSON.parse(response);
-					canvas.init();
-					canvas.callback = PipBoy.init;
-					canvas.helloWorld();
+					pipcanvas.init();
+					pipcanvas.helloWorld(pipBoy.init);
 				}
 			});
 		}
