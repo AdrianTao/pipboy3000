@@ -98,7 +98,7 @@ header ul{
 }
 #display nav li:nth-child(1){
 	bottom: 50px;
-	left: 73px;
+	left: 70px;
 	width: 60px;
 	transform-style:preserve-3d;
 	transform: rotateY(-2deg) rotateX(-2deg);
@@ -106,33 +106,33 @@ header ul{
 }
 #display nav li:nth-child(1):hover,#display nav li:nth-child(1).on{
 	bottom: 48px;
-	left: 71px;
+	left: 68px;
 }
 #display nav li:nth-child(2){
 	bottom: 45px;
-	left: 181px;
+	left: 176px;
 	transform-style:preserve-3d;
 	transform: rotateY(-1deg) rotateX(-0.5deg);
 	-webkit-transform: rotateY(-1deg) rotateX(-0.5deg); /* Safari and Chrome */
 }
 #display nav li:nth-child(2):hover,#display nav li:nth-child(2).on{
 	bottom: 43px;
-	left: 179px;
+	left: 174px;
 }
 #display nav li:nth-child(3){
 	bottom: 43px;
-	left: 276px;
+	left: 272px;
 	transform: rotateX(-0.5deg);
 	-webkit-transform:rotateX(-0.5deg);
 }
 #display nav li:nth-child(3):hover,#display nav li:nth-child(3).on{
 	bottom: 41px;
-	left: 274px;
+	left: 270px;
 
 }
 #display nav li:nth-child(4){
 	bottom: 45px;
-	left: 376px;
+	left: 372px;
 	width: 70px;
 	transform-style:preserve-3d;
 	transform: rotateY(0.5deg) rotateX(-0.5deg);
@@ -140,12 +140,12 @@ header ul{
 }
 #display nav li:nth-child(4):hover,#display nav li:nth-child(4).on{
 	bottom: 43px;
-	left: 374px;
+	left: 370px;
 }
 #display nav li:nth-child(5){
 	font-size: 14px;
 	bottom: 50px;
-	left: 482px;
+	left: 478px;
 	width: 70px;
 	transform-style:preserve-3d;
 	transform: rotateY(1deg) rotateX(-0.5deg);
@@ -153,7 +153,7 @@ header ul{
 }
 #display nav li:nth-child(5):hover,#display nav li:nth-child(5).on{
 	bottom: 48px;
-	left: 480px;
+	left: 476px;
 }
 /**********
 	列表
