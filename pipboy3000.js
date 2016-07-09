@@ -84,7 +84,7 @@ PipBoy.prototype = {
 				if(obj[this.index].url == ""){
 					figure.innerHTML = "<a href='JavaScript:;'><img src='" + obj[this.index].img + "'></a>"
 				}else{
-					figure.innerHTML = "<a href='" + obj[this.index].url + "' target='_blank'><img src='" + obj[this.index].img + "' title='点击图片查看demo'></a>";
+					figure.innerHTML = "<a href='" + obj[this.index].url + "' target='_blank'><span class='lj' title='点击图片查看demo'></span><img src='" + obj[this.index].img + "'></a>";
 				}
 				section.innerHTML = "<p>" + obj[this.index].text + "</p>";
 			}
@@ -121,6 +121,36 @@ PipBoy.prototype = {
 		listBox.appendChild(aside);
 		this.listMouse(obj);
 	},
+	//shake
+	shake:function(){
+		var pip = document.getElementById("pipboy");
+		var box = document.getElementById("display");
+		var pipLeft = window.innerWidth>1197? 350 + (window.innerWidth-1197)/2 : 350;
+		var pipTop = 65;
+		var boxLeft = 350;
+		var boxTop = 77.04;
+		var num = 50;
+		var speed = 2;
+		var i=0;
+		var that = this;
+		function tw(){
+			pip.style.left = pipLeft - speed + "px";
+			pip.style.top = pipTop + speed + "px";
+			box.style.left = boxLeft - speed + "px";
+			box.style.top = boxTop + speed + "px";
+			i++;
+			speed = -speed;
+			if(i<num){
+				var timer = setTimeout(tw,1);
+			}else{
+				pip.style.top = pipTop + "px";
+				pip.style.left = pipLeft + "px";
+				box.style.top = boxTop + "px";
+				box.style.left = boxLeft + "px";
+			}
+		}
+		tw();
+	},
 	//屏幕中 五个导航点击事件
 	navAction:function(){
 		var btn = this.nav.getElementsByTagName("li");
@@ -139,6 +169,7 @@ PipBoy.prototype = {
 				}else{
 					that.list(obj[this.index].list);
 				}
+				that.shake();
 			}
 		}
 		btn[0].onclick();

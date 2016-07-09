@@ -12,6 +12,9 @@ PipCanvas.prototype = {
 		this.canvas.width = 614.4;
 		this.canvas.height = 480;
 		this.canvas.style.left = 350 + (window.innerWidth - 1197) / 2 + "px";
+		if(window.innerWidth < 1197){
+			this.canvas.style.left = "350px";
+		}
 
 		//载入图片
 		this.pip = document.createElement("img");
