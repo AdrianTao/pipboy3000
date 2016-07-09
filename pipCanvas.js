@@ -2,11 +2,6 @@ function PipCanvas(){
 	this.canvas = null;
 	this.ctx = null;
 	this.bg = "";//背景url
-	this.proportion = 0.5625;//背景宽高比
-	this.dWdith = null;//  显示器 宽
-	this.dHeight = null;//       高
-	this.dTop = null;//          y坐标
-	this.dLeft = null;//         x坐标
 	this.pip = null;
 	this.pip2 = null;
 }
@@ -14,14 +9,11 @@ PipCanvas.prototype = {
 	//初始化
 	init:function(){
 		this.canvas = document.getElementsByTagName('canvas')[0];
-		this.canvas.width = 1280;
-		this.canvas.height = 720;
-		//显示器宽度高度以及坐标
-		this.dWdith = 614.4;
-		this.dHeight = 480;
-		this.dTop = 65;
-		this.dLeft = this.canvas.width * 0.31;
+		this.canvas.width = 614.4;
+		this.canvas.height = 480;
+		this.canvas.style.left = 350 + (window.innerWidth - 1197) / 2 + "px";
 
+		//载入图片
 		this.pip = document.createElement("img");
 		this.pip.style.position = "absolute";
 		this.pip.style.left = "500px";
@@ -41,14 +33,13 @@ PipCanvas.prototype = {
 		var raf;
 		var text = {
 			text1 :[
-				"01010011010010101010100110010101010001101010101011",
-				"01010011010010101001010011010010010100110101010010",
-				"01010011011010011010100110001010100101010100101010"
+				"010100110100101010101001100101010100011010101010001101010101011",
+				"010100110100101010010100110100100101000001101010101110101010010",
+				"010100110110100110101001100010101001000110101010101010100101010"
 				],
-			x: 470,
-			y: 500,
-			start:500,
-			end:520,
+			x: that.canvas.width * 0.12,
+			y: that.canvas.height,
+			end:that.canvas.height+20,
 			line:20,
 			font:"20px serif",
 			color:"rgba(30,255,140,0.7)",
@@ -57,20 +48,21 @@ PipCanvas.prototype = {
 				that.ctx.fillStyle = this.color;
 				for(var i=0 ; i<this.line ; i++){
 					if(this.y+i*20 < this.end){
-						that.ctx.fillText(this.text1[Math.floor(Math.random() * 3 + 0)],this.x,this.y+i*20);
+						that.ctx.fillText(this.text1[Math.floor(Math.random() * 3 + 0)],this.x,this.y+i*20,that.canvas.width*0.88-this.x);
 					}else{
 						break;
 					}
 				}
 			}
 		}
+		//数字略过屏幕
 		function draw(){
-			that.ctx.clearRect(that.dLeft,that.dTop-50, that.dWdith, that.dHeight);
+			that.ctx.clearRect(0,-50, that.canvas.width, that.canvas.height);
 			that.display();
 			text.draw();
-			if(text.y > that.dTop){
+			if(text.y > 0){
 				text.y += -20;
-			}else if(text.y <= that.dTop){
+			}else if(text.y <= 0){
 				text.line--;
 			}
 			if(text.line == 0){
@@ -83,6 +75,7 @@ PipCanvas.prototype = {
 		}
 		raf = setTimeout(draw,30);
 		this.ctx.restore();
+		//载入图片
 		function loadImg(){
 			document.getElementsByClassName("bg")[0].appendChild(that.pip);
 			setTimeout(function(){
@@ -102,7 +95,7 @@ PipCanvas.prototype = {
 	},
 	displayShadow:function(){
 		this.ctx.save();
-		var shadow = this.ctx.createRadialGradient(this.dLeft+this.dWdith/2,this.dTop+this.dHeight/2,0,this.dLeft+this.dWdith/2,this.dTop+this.dHeight/2,this.dHeight*0.75);
+		var shadow = this.ctx.createRadialGradient(this.canvas.width/2,this.canvas.height/2,0,this.canvas.width/2,this.canvas.height/2,this.canvas.height *0.75);
 		shadow.addColorStop(0,"rgba(0,0,0,0.2)");
 		shadow.addColorStop(0.3,"rgba(0,0,0,0.2)");
 		shadow.addColorStop(0.5,"rgba(0,0,0,0.2)");
@@ -112,23 +105,23 @@ PipCanvas.prototype = {
 		shadow.addColorStop(0.9,"rgba(0,0,0,0.8)");
 		shadow.addColorStop(1,"rgba(0,0,0,1)");
 		this.ctx.fillStyle = shadow;
-		this.ctx.fillRect(this.dLeft,this.dTop,this.dWdith,this.dHeight);
+		this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
 
-		var shadowBottom = this.ctx.createLinearGradient(0,this.dTop+this.dHeight-100,0,this.dTop+this.dHeight);
+		var shadowBottom = this.ctx.createLinearGradient(0,this.canvas.height-100,0,this.canvas.height);
 		shadowBottom.addColorStop(0,"rgba(0,0,0,0.1)");
 		shadowBottom.addColorStop(0.3,"rgba(0,0,0,0.3)");
 		shadowBottom.addColorStop(0.4,"rgba(0,0,0,0.5)");
 		shadowBottom.addColorStop(1,"rgba(0,0,0,0.6)");
 		this.ctx.fillStyle = shadowBottom;
-		this.ctx.fillRect(this.dLeft,this.dTop+this.dHeight-100,this.dLeft+this.dWdith,this.dTop+this.dWdith);
+		this.ctx.fillRect(0,this.canvas.height-100,this.canvas.width,this.canvas.height);
 
-		var shadowTop = this.ctx.createLinearGradient(0,this.dTop,0,this.dTop+100);
+		var shadowTop = this.ctx.createLinearGradient(0,0,0,100);
 		shadowTop.addColorStop(1,"rgba(0,0,0,0.1)");
 		shadowTop.addColorStop(0.4,"rgba(0,0,0,0.3)");
 		shadowTop.addColorStop(0.3,"rgba(0,0,0,0.5)");
 		shadowTop.addColorStop(0,"rgba(0,0,0,0.6)");
 		this.ctx.fillStyle = shadowTop;
-		this.ctx.fillRect(this.dLeft,this.dTop,this.dLeft+this.dWdith,this.dTop+100);
+		this.ctx.fillRect(0,0,this.canvas.width,100);
 
 		this.ctx.restore();
 	},
@@ -136,7 +129,7 @@ PipCanvas.prototype = {
 	displayBg:function(){
 		this.ctx.save();
 		this.ctx.fillStyle = "rgb(1,34,17)";
-		this.ctx.fillRect(this.dLeft,this.dTop,this.dWdith,this.dHeight);
+		this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
 		this.ctx.restore();
 	},
 	//背景条纹
@@ -144,10 +137,10 @@ PipCanvas.prototype = {
 		this.ctx.save();
 		this.ctx.strokeStyle = "rgba(3,45,14,0.5)";
 		this.ctx.lineWidth = 3;
-		for(var i=0 ; i<this.dHeight ; i+=8){
+		for(var i=0 ; i<this.canvas.height ; i+=8){
 			this.ctx.beginPath();
-			this.ctx.moveTo(this.dLeft,i+this.dTop);
-			this.ctx.lineTo(this.dLeft+this.dWdith,i+this.dTop);
+			this.ctx.moveTo(0,i);
+			this.ctx.lineTo(this.canvas.width,i);
 			this.ctx.stroke();
 		}
 		this.ctx.restore();
@@ -155,6 +148,6 @@ PipCanvas.prototype = {
 	//界面框架
 	displayGrid:function(){
 		var grid = document.getElementById("grid");
-		this.ctx.drawImage(grid,this.dLeft,this.dTop,this.dWdith,this.dHeight);
+		this.ctx.drawImage(grid,0,0,this.canvas.width,this.canvas.height);
 	}
 }
