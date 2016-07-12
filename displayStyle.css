@@ -297,18 +297,18 @@ header ul{
 .main-picture a span{
 	position: absolute;
 	z-index: 50;
-	left: 100px;
-	width: 158px;
+	left: 50px;
+	width: 200px;
 	height: 200px; 
-	background-color: rgba(5,255,5,0.5);
+	background-color: rgba(5,255,5,0.4);
 }
 .main-picture img{
 	position: absolute;
-	margin-left: 100px;
+	margin-left: 50px;
 	border: none;
 	padding: 0;
 	outline: 0;
-	width: 158px;
+	width: 200px;
 	height: 200px; 
 }
 .main-text{
