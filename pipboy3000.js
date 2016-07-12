@@ -21,7 +21,7 @@ PipBoy.prototype = {
 		this.stats.onclick();
 		this.box.style.display = "block";
 	},
-	//
+	//主页人物动画
 	peopleHover:function(){
 		var people = document.getElementsByClassName("main-people")[0].getElementsByTagName("div");
 		var timer = null;
@@ -84,7 +84,7 @@ PipBoy.prototype = {
 				if(obj[this.index].url == ""){
 					figure.innerHTML = "<a href='JavaScript:;'><img src='" + obj[this.index].img + "'></a>"
 				}else{
-					figure.innerHTML = "<a href='" + obj[this.index].url + "' target='_blank'><span class='lj' title='点击图片查看demo'></span><img src='" + obj[this.index].img + "'></a>";
+					figure.innerHTML = "<a href='" + obj[this.index].url + "' target='_blank'><img title='点击图片查看demo' src='" + obj[this.index].img + "'></a>";
 				}
 				section.innerHTML = "<p>" + obj[this.index].text + "</p>";
 			}

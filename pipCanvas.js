@@ -7,8 +7,8 @@ function PipCanvas(){
 }
 PipCanvas.prototype = {
 	//初始化
-	init:function(){
-		this.canvas = document.getElementsByTagName('canvas')[0];
+	init:function(id){
+		this.canvas = document.getElementById(id);
 		this.canvas.width = 614.4;
 		this.canvas.height = 480;
 		this.canvas.style.left = 350 + (window.innerWidth - 1197) / 2 + "px";
