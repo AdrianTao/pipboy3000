@@ -56,19 +56,6 @@
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="displayStyle.css">
-	<script type="text/javascript">
-		function addLoadEvent(func){
-    		var oldonload = window.onload;
-  			if(typeof window.onload != 'function'){
-        		window.onload = func;
-    		}else{
-        		window.onload = function(){
-        	    	oldonload();
-        	    	func();
-       			}
-  			}
-		}
-	</script>
 </head>
 <body>
 	<div class="welcome">
@@ -100,7 +87,6 @@
 						目前正在找工作,web前端开发/实习 岗位<br>
 						哪位HR看上了赶紧联系我啊！点击联系方式↘<br>
 						点击 ITEMS 可以看到我的一些小作品<br>
-						点击 DATA 更改设置(如背景音乐)
 					</p>
 					<figure class="main-people" style="display:block">
 						<div class="people-header">
@@ -148,6 +134,10 @@
 			<nav>
 				
 			</nav>
+			<audio class="music">
+ 				<source src="" type="audio/ogg">
+				<source src="" type="audio/mpeg">
+			</audio>
 		</div>
 		<nav id="toggle">
 			<button class="stats"></button>
@@ -168,7 +158,7 @@
 	<script type="text/javascript" src="pipboy3000.js"></script>
 	<script type="text/javascript">
 		window.onload = function(){
-			/*ajax({
+			ajax({
 				type:"get",
 				url:"myInfo.json",
 				async:true,
@@ -177,119 +167,19 @@
 					document.getElementsByClassName("welcome")[0].style.display = "none";
 					var pipcanvas = new PipCanvas();
 					var pipBoy = new PipBoy();
-					pipBoy.data = JSON.parse(response);
-					pipcanvas.init();
+					var jo = JSON.stringify();
+					pipBoy.data = JSON.parse(jo);
+					pipcanvas.init("pipboy");
+					var mus = document.getElementsByClassName("music")[0];
+					mus.src = "http://xunlei.sc.chinaz.com/Files/DownLoad/sound1/201504/5707.mp3";
+					mus.play();
 					pipcanvas.helloWorld(function(){
 						grid();
 						pipBoy.init();
 						pipcanvas.displayGrid();
 					});
 				}
-			});*/
-			document.getElementsByClassName("welcome")[0].style.display = "none";
-				var pipcanvas = new PipCanvas();
-				var pipBoy = new PipBoy();
-				var jo = JSON.stringify({
-	"STATS":[
-		{
-			"title":"状态"
-		},
-		{
-			"title":"属性",
-			"list":[
-				{"title":"姓名","url":"","text":"陶俊","img":"https://lh3.googleusercontent.com/-4EIFoLxA-uI/VkJwCzaFxGI/AAAAAAAAAtM/uuKreCAario/s426/2015%2B-%2B1"},
-				{"title":"性别","url":"","text":"男性","img":"https://a.disquscdn.com/get?url=http%3A%2F%2Fcontent.bethsoft.com%2Fbsw_cms_asset%2F58986_1_1.gif&key=OPxLuotqlDXi65seuAm9Fw"},
-				{"title":"民族","url":"","text":"汉族","img":"https://a.disquscdn.com/get?url=http%3A%2F%2Fcontent.bethsoft.com%2Fbsw_cms_asset%2F59006_1_1.gif&key=ALhijEm8BJQXhbP0ciNXXQ"},
-				{"title":"出生日期","url":"","text":"1994年1月14日","img":"https://a.disquscdn.com/get?url=http%3A%2F%2Fcontent.bethsoft.com%2Fbsw_cms_asset%2F58966_1_1.gif&key=nwhjY9jt8vki88Yt7pl2hQ"},
-				{"title":"身高/体重","url":"","text":"165/66","img":"http://6.pic.paopaoche.net/up/2015-11/2015116173538.gif"},
-				{"title":"籍贯","url":"","text":"浙江温州","img":"http://file1.a9vg.com/data/attachment/forum/201511/04/1213178qq7ddb8uxmdqo5u.gif"},
-				{"title":"学校/专业","url":"","text":"温州职业技术学院-数控专业-专科","img":"https://a.disquscdn.com/get?url=http%3A%2F%2Fcontent.bethsoft.com%2Fbsw_cms_asset%2F58926_1_1.gif&key=_rqGf6OpzgGpx8ffggaApw"},
-				{"title":"求职意向","url":"","text":"web前端开发/实习","img":"https://lh5.googleusercontent.com/-Fqb2GFvCFHA/AAAAAAAAAAI/AAAAAAAB814/G2QlduLMQwU/photo.jpg"},
-				{"title":"目前状况","url":"","text":"正在找工作中","img":"http://file1.a9vg.com/data/attachment/forum/201511/04/1213152gg6ym2hyagmmpa6.gif"}
-			]
-		},
-		{
-			"title":"技能",
-			"list":[
-				{"title":"JavaScript","url":"","text":"熟练使用js,了解jquery.","img":"http://img.25pp.com/uploadfile/soft/images/2014/1231/20141231020916637.jpg"},
-				{"title":"HTML","url":"","text":"熟练掌握html,了解html5新特性。","img":"http://e.hiphotos.baidu.com/baike/w%3D268/sign=534e4bdeb68f8c54e3d3c22902292dee/94cad1c8a786c9178321df09cb3d70cf3ac79f3df8dc77dc.jpg"},
-				{"title":"CSS","url":"","text":"熟练掌握css,了解css3新特性。","img":"http://www.eboxlab.net/wp-content/uploads/2015/09/css.png"},
-				{"title":"数据结构","url":"","text":"了解基本数据结构,曾经使用C语言实现过","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/220px-Binary_tree.svg.png"},
-				{"title":"C语言","url":"","text":"基本了解c","img":"http://tw.gitbook.net/static.v2.0/logo/cprogramming.png"},
-				{"title":"Ajax","url":"","text":"懂得使用ajax传递/获取信息,懂得封装ajax","img":"http://secure.cache.images.core.optasports.com/soccer/teams/150x150/1515.png"},
-				{"title":"json","url":"","text":"了解json格式,懂得使用传递数据","img":"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAACvAAAAJDg4MWQwMTBjLTAyYjItNDAxMy1iMTQ2LWU1ZTAzMTE4NzM0Yw.png"}
-			]
-		},
-		{
-			"title":"照片",
-			"list":[
-				{"title":"picture-1","url":"","text":"拍摄于:忘了","img":"images/photo/tao.jpg"},
-				{"title":"picture-2","url":"","text":"拍摄于:2015-9","img":"images/photo/jun.jpg"}
-			]
-		},
-		{
-			"title":"联系方式",
-			"list":[
-				{"title":"手机","url":"","text":"13738367048","img":"http://www.psjia.com/uploads/allimg/140905/112104H91-14.png"},
-				{"title":"邮箱","url":"","text":"taojun1994@gmail.com","img":"http://www.iconpng.com/png/squareplex/email2.png"},
-				{"title":"github","url":"https://github.com/AdrianTao","text":"https://github.com/AdrianTao","img":"http://www.iconpng.com/png/essentials/github20.png"}
-			]
-		}
-	],
-	"ITEMS":[
-		{
-			"title":"拖动",
-			"list":[
-				{"title":"可拖动并改变大小的窗体","url":"http://adriantao.github.io/Demo/drag/01/index.html","text":"可拖动并改变大小的窗体,限制了拖动缩放大小的范围,点击图片查看demo","img":"http://pic.58pic.com/58pic/15/48/15/58458PICEW3_1024.png"},
-				{"title":"滑动验证","url":"http://adriantao.github.io/Demo/drag/02/index.html", "text":"滑动验证,点击图片查看demo","img":"http://www.17sucai.com/upload/11667/2016-03-24/1badb86d1dfe22ecd184d5f0a476618f_big.jpg"}
-			]
-		},
-		{
-			"title":"移动端",
-			"list":[
-				{"title":"移动端效果展示","url":"http://adriantao.github.io/Demo/mobile/pc-index2.html","text":"pc端可用鼠标点按切换标签,移动端可以用滑动切换标签,点击图片查看demo","img":"http://www.iconpng.com/png/essentials/mobile173.png"}
-			]
-		},
-		{
-			"title":"游戏",
-			"list":[
-				{"title":"web计算器","url":"http://adriantao.github.io/Demo/calculator/index.html", "text":"常见的科学计算器,可计算连续的运算式，并且会按符号优先级计算,点击图片查看demo","img":"http://img4.imgtn.bdimg.com/it/u=168181147,1010707677&fm=21&gp=0.jpg"},
-				{"title":"贪吃蛇","url":"http://adriantao.github.io/Demo/snake/index.html","text":"贪吃蛇小游戏,上下左右方向键控制,点击图片查看demo","img":"http://img5.imgtn.bdimg.com/it/u=3858992584,173293045&fm=15&gp=0.jpg"},
-				{"title":"俄罗斯方块","url":"http://adriantao.github.io/Demo/Tetris/index.html","text":"经典的俄罗斯方块游戏,上下左右方向键控制,点击图片查看demo","img":"http://cdn7.staztic.com/app/a/6730/6730965/classic-brick-blocks-6-l-280x280.png"},
-				{"title":"2048","url":"http://adriantao.github.io/Demo/2048/index.html","text":"2048,相同的数字碰撞后会合并,当无法合并时,游戏结束.上下左右方向键控制,点击图片查看demo","img":"http://img5.imgtn.bdimg.com/it/u=2319397729,1245392866&fm=21&gp=0.jpg"}
-			]
-		},
-		{
-			"title":"其他",
-			"list":[
-				{"title":"之前的简历","url":"http://adriantao.github.io","text":"之前的简历,模仿京东的页面,做了一半,没做了。。(尴尬),点击图片查看demo","img":"http://www.iconpng.com/png/stylistica-icons/blank_page.png"},
-				{"title":"作品集","url":"http://adriantao.github.io/Demo","text":"小作品合集,点击图片查看demo","img":"http://www.iconpng.com/png/essentials/list43.png"},
-				{"title":"canvas时钟","url":"http://adriantao.github.io/Demo/clock/index.html","text":"用canvas画板画出来的卡通时钟","img":"http://www.iconpng.com/png/ios7-ultralight/circular35.png"},
-				{"title":"页码效果","url":"http://adriantao.github.io/Demo/other/page/index2.html","text":"常见于贴吧等论坛,点击图片查看demo","img":"http://img2.imgtn.bdimg.com/it/u=2518782013,2671838987&fm=21&gp=0.jpg"},
-				{"title":"简易评分","url":"http://adriantao.github.io/Demo/other/1/index.html", "text":"简易评分,点击图片查看demo","img":"http://img4.imgtn.bdimg.com/it/u=1566834802,2912740006&fm=21&gp=0.jpg"}
-			]
-		},
-		{
-			"title":"图片轮播",
-			"list":[
-				{"title":"仿淘宝首页图片轮换","url":"http://adriantao.github.io/Demo/slide/01/index5.html", "text":"仿淘宝首页图片轮换,点击图片查看demo","img":"http://a675.phobos.apple.com/us/r30/Purple3/v4/e8/87/5e/e8875e04-8346-2fb2-dd5f-07aea605c24a/mzl.qdtkadvr.png"},
-				{"title":"多个图片轮换","url":"http://adriantao.github.io/Demo/slide/02/index.html", "text":"多个图片轮换,点击图片查看demo","img":"http://p2.img.cctvpic.com/20120411/images/1334130552169_1334130552169_r.jpg"},
-				{"title":"仿亚马逊首页图片轮换","url":"http://adriantao.github.io/Demo/slide/03/index.html", "text":"仿亚马逊首页图片轮换,点击图片查看demo","img":"http://www.iconpng.com/png/socialmedia512/amazon-icon.png"}
-			]
-		}
-	],
-	"DATA":[
-		
-	]
-});
-				pipBoy.data = JSON.parse(jo);
-				pipcanvas.init("pipboy");
-				pipcanvas.helloWorld(function(){
-					grid();
-					pipBoy.init();
-					pipcanvas.displayGrid();
-				});
-		}
+			});
 	</script>
 </body>
 </html>

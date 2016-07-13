@@ -7,6 +7,8 @@ function PipBoy(){
 	this.data = [];
 	this.myjson = null;
 	this.stats = null;
+	this.music = null;
+	this.dataBtn = null;
 }
 PipBoy.prototype = {
 	//初始化
@@ -20,6 +22,23 @@ PipBoy.prototype = {
 		this.peopleHover();
 		this.stats.onclick();
 		this.box.style.display = "block";
+	},
+	//audio
+	playAudio:function(url){
+		this.music = document.getElementsByClassName("music")[0];
+		this.music.src = url;
+		this.music.play();
+	},
+	//按键闪绿屏特效
+	displayGreen:function(id){
+		var box = document.getElementById(id);
+		box.style.backgroundColor = "green";
+		box.style.opacity = 0.5;
+		var timer;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+			
+		})
 	},
 	//主页人物动画
 	peopleHover:function(){
@@ -178,7 +197,7 @@ PipBoy.prototype = {
 	toggleAction:function(){
 		this.stats = document.getElementsByClassName('stats')[0];
 		this.items = document.getElementsByClassName('items')[0];
-		var data = document.getElementsByClassName('data')[0];
+		this.dataBtn = document.getElementsByClassName('data')[0];
 		var that = this;
 		this.stats.onclick = function(){
 			document.getElementById("list").style.display = "none";
@@ -220,6 +239,15 @@ PipBoy.prototype = {
 			that.nav.innerHTML = ul;
 			that.toggle = "ITEMS";//标明当前在第2个toggle
 			that.navAction();
+		}
+		this.dataBtn.onclick = function(){
+			var window = document.createElement("div");
+			window.className = "prompt";
+			window.innerHTML = "啊！这个按钮我还没想到要做什么。。";
+			that.box.appendChild(window);
+			setTimeout(function(){
+				that.box.removeChild(window);
+			},3000)
 		}
 	}
 }

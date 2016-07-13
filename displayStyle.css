@@ -28,6 +28,18 @@
 	perspective:150;
 	-webkit-perspective:150; /* Safari and Chrome */
 }
+.prompt{
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	margin: auto;
+	top: 0;bottom: 0;left: 0;right: 0;
+	background-color: black;
+	text-align: center;
+	line-height: 200px;
+	color: rgba(30,255,140,0.7);
+	border: 1px solid rgba(30,255,140,0.7);
+}
 /*显示屏头部*/
 header .header-title{
 	position: absolute;

@@ -1,7 +1,6 @@
 function PipCanvas(){
 	this.canvas = null;
 	this.ctx = null;
-	this.bg = "";//背景url
 	this.pip = null;
 	this.pip2 = null;
 }
@@ -27,7 +26,6 @@ PipCanvas.prototype = {
 		this.pip2.src = "images/hello2.gif";
 
 		this.ctx = this.canvas.getContext('2d');
-		this.bg = "images/pipboy3000.png";
 	},
 	//开机动画
 	helloWorld:function(callback){
@@ -43,7 +41,7 @@ PipCanvas.prototype = {
 			x: that.canvas.width * 0.12,
 			y: that.canvas.height,
 			end:that.canvas.height+20,
-			line:20,
+			line:60,
 			font:"20px serif",
 			color:"rgba(30,255,140,0.7)",
 			draw:function(){
@@ -80,6 +78,7 @@ PipCanvas.prototype = {
 		this.ctx.restore();
 		//载入图片
 		function loadImg(){
+			document.getElementsByClassName("music")[0].pause();
 			document.getElementsByClassName("bg")[0].appendChild(that.pip);
 			setTimeout(function(){
 				that.pip.src = that.pip2.src;
