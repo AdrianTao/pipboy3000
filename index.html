@@ -167,8 +167,7 @@
 					document.getElementsByClassName("welcome")[0].style.display = "none";
 					var pipcanvas = new PipCanvas();
 					var pipBoy = new PipBoy();
-					var jo = JSON.stringify();
-					pipBoy.data = JSON.parse(jo);
+					pipBoy.data = JSON.parse(response);
 					pipcanvas.init("pipboy");
 					var mus = document.getElementsByClassName("music")[0];
 					mus.src = "http://xunlei.sc.chinaz.com/Files/DownLoad/sound1/201504/5707.mp3";
