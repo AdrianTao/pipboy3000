@@ -134,10 +134,6 @@
 			<nav>
 				
 			</nav>
-			<audio class="music">
- 				<source src="" type="audio/ogg">
-				<source src="" type="audio/mpeg">
-			</audio>
 		</div>
 		<nav id="toggle">
 			<button class="stats"></button>
@@ -169,9 +165,6 @@
 					var pipBoy = new PipBoy();
 					pipBoy.data = JSON.parse(response);
 					pipcanvas.init("pipboy");
-					var mus = document.getElementsByClassName("music")[0];
-					mus.src = "http://xunlei.sc.chinaz.com/Files/DownLoad/sound1/201504/5707.mp3";
-					mus.play();
 					pipcanvas.helloWorld(function(){
 						grid();
 						pipBoy.init();

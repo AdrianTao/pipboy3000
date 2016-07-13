@@ -78,7 +78,6 @@ PipCanvas.prototype = {
 		this.ctx.restore();
 		//载入图片
 		function loadImg(){
-			document.getElementsByClassName("music")[0].pause();
 			document.getElementsByClassName("bg")[0].appendChild(that.pip);
 			setTimeout(function(){
 				that.pip.src = that.pip2.src;
