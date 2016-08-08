@@ -40,7 +40,7 @@
 			"title":"联系方式",
 			"list":[
 				{"title":"手机","url":"","text":"13738367048","img":"http://www.psjia.com/uploads/allimg/140905/112104H91-14.png"},
-				{"title":"邮箱","url":"","text":"taojun1994@gmail.com","img":"http://www.iconpng.com/png/squareplex/email2.png"},
+				{"title":"邮箱","url":"mailto:taojun1994@gmail.com","text":"taojun1994@gmail.com","img":"http://www.iconpng.com/png/squareplex/email2.png"},
 				{"title":"github","url":"https://github.com/AdrianTao","text":"https://github.com/AdrianTao","img":"http://www.iconpng.com/png/essentials/github20.png"}
 			]
 		}
