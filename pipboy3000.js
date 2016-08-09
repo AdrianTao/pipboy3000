@@ -84,9 +84,9 @@ PipBoy.prototype = {
 				}
 				listArray[this.index].className = "hover";
 				if(obj[this.index].url == ""){
-					figure.innerHTML = "<a href='JavaScript:;'><img src='" + obj[this.index].img + "'></a>"
+					figure.innerHTML = "<img src='" + obj[this.index].img + "'><a href='JavaScript:;' style='display:none'></a>"
 				}else{
-					figure.innerHTML = "<a href='" + obj[this.index].url + "' target='_blank'><img title='点击图片查看demo' src='" + obj[this.index].img + "'></a>";
+					figure.innerHTML = "<img title='点击图片查看demo' src='" + obj[this.index].img + "'><a href='" + obj[this.index].url + "' target='_blank'>查看</a>";
 				}
 				section.innerHTML = "<p>" + obj[this.index].text + "</p>";
 			}
