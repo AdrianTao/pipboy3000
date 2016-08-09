@@ -309,9 +309,17 @@ header ul{
 	width: 60px;
 	height: 25px;
 	position: absolute;
-	right: 0;
-	transform: rotateX(0.5deg);
-	-webkit-transform: rotateX(0.5deg); /* Safari and Chrome */
+	right: 12px;
+	top: 30px;
+	line-height: 25px;
+	text-align: center;
+	transform: rotateX(0.5deg) rotateY(1deg);
+	-webkit-transform: rotateX(0.5deg) rotateY(1deg); /* Safari and Chrome */
+}
+.main-picture a:hover{
+	right: 10px;
+	top: 28px;
+	border:2px solid rgb(30,255,140);
 }
 .main-picture img{
 	position: absolute;
