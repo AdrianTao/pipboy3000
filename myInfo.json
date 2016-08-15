@@ -39,7 +39,7 @@
 		{
 			"title":"联系方式",
 			"list":[
-				{"title":"手机","url":"","text":"13738367048","img":"images/icon/phone.png"},
+				{"title":"手机","url":"","text":"137-3836-7048","img":"images/icon/phone.png"},
 				{"title":"邮箱","url":"mailto:taojun1994@gmail.com","text":"taojun1994@gmail.com","img":"images/icon/email.png"},
 				{"title":"github","url":"https://github.com/AdrianTao","text":"https://github.com/AdrianTao","img":"images/icon/github.png"}
 			]
