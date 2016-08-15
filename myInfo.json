@@ -20,20 +20,20 @@
 		{
 			"title":"技能",
 			"list":[
-				{"title":"JavaScript","url":"","text":"熟练使用js,了解jquery.","img":"images/icon/javascript (1).png"},
-				{"title":"HTML","url":"","text":"熟练掌握html,了解html5新特性。","img":"images/icon/html.png"},
-				{"title":"CSS","url":"","text":"熟练掌握css,了解css3新特性。","img":"images/icon/css.png"},
-				{"title":"数据结构","url":"","text":"了解基本数据结构,曾经使用C语言实现过","img":"images/icon/结构图.png"},
-				{"title":"C语言","url":"","text":"基本了解c","img":"images/icon/c.png"},
-				{"title":"Ajax","url":"","text":"懂得使用ajax传递/获取信息,懂得封装ajax","img":"images/icon/ajax.png"},
-				{"title":"json","url":"","text":"了解json格式,懂得使用传递数据","img":"images/icon/file-json.png"}
+				{"title":"JavaScript","url":"","text":"熟练使用js,了解jQuery.","img":"images/icon/javascript (1).png"},
+				{"title":"HTML","url":"","text":"熟练掌握html,了解HTML5新特性。","img":"images/icon/html.png"},
+				{"title":"CSS","url":"","text":"熟练掌握CSS,了解CSS3新特性。","img":"images/icon/css.png"},
+				{"title":"Ajax","url":"","text":"懂得使用Ajax传递/获取信息,懂得封装Ajax","img":"images/icon/ajax.png"},
+				{"title":"JSON","url":"","text":"了解JSON格式,懂得使用传递数据","img":"images/icon/file-json.png"},
+				{"title":"数据结构","url":"","text":"了解基本数据结构","img":"images/icon/结构图.png"},
+				{"title":"C语言","url":"","text":"了解c语言","img":"images/icon/c.png"}
 			]
 		},
 		{
 			"title":"照片",
 			"list":[
-				{"title":"picture-1","url":"","text":"拍摄于:忘了","img":"images/photo/tao.jpg"},
-				{"title":"picture-2","url":"","text":"拍摄于:2015-9","img":"images/photo/jun.jpg"}
+				{"title":"photo-1","url":"","text":"拍摄于:忘了","img":"images/photo/tao.jpg"},
+				{"title":"photo-2","url":"","text":"拍摄于:2015-9","img":"images/photo/jun.jpg"}
 			]
 		},
 		{
@@ -50,7 +50,7 @@
 			"title":"拖动",
 			"list":[
 				{"title":"可拖动并改变大小的窗体","url":"http://adriantao.github.io/Demo/drag/01/index.html","text":"可拖动并改变大小的窗体,限制了拖动缩放大小的范围,点击图片查看demo","img":"images/icon/drag.png"},
-				{"title":"滑动验证","url":"http://adriantao.github.io/Demo/drag/02/index.html", "text":"滑动验证","img":"images/icon/tav.png"}
+				{"title":"滑动验证","url":"http://adriantao.github.io/demo/drag/02/index.html", "text":"滑动验证","img":"images/icon/tav.png"}
 			]
 		},
 		{
@@ -62,10 +62,10 @@
 		{
 			"title":"游戏",
 			"list":[
-				{"title":"web计算器","url":"http://adriantao.github.io/Demo/calculator/index.html", "text":"常见的科学计算器,可计算连续的运算式，并且会按符号优先级计算","img":"images/icon/calculator.png"},
-				{"title":"贪吃蛇","url":"http://adriantao.github.io/Demo/snake/index.html","text":"贪吃蛇小游戏,上下左右方向键控制","img":"images/icon/snake.png"},
-				{"title":"俄罗斯方块","url":"http://adriantao.github.io/Demo/Tetris/index.html","text":"经典的俄罗斯方块游戏,上下左右方向键控制","img":"images/icon/block.png"},
-				{"title":"2048","url":"http://adriantao.github.io/Demo/2048/index.html","text":"2048,相同的数字碰撞后会合并,当无法合并时,游戏结束.上下左右方向键控制","img":"images/icon/2048.png"}
+				{"title":"web计算器","url":"http://adriantao.github.io/Demo/calculator/index.html", "text":"可计算连续的运算式，并且会按符号优先级计算","img":"images/icon/calculator.png"},
+				{"title":"贪吃蛇","url":"http://adriantao.github.io/Demo/snake/index.html","text":"简易版贪吃蛇,上下左右方向键控制","img":"images/icon/snake.png"},
+				{"title":"俄罗斯方块","url":"http://adriantao.github.io/Demo/Tetris/index.html","text":"简易版俄罗斯方块，上下左右方向键控制","img":"images/icon/block.png"},
+				{"title":"2048","url":"http://adriantao.github.io/Demo/2048/index.html","text":"相同的数字碰撞后会合并,当无法合并时,游戏结束.上下左右方向键控制","img":"images/icon/2048.png"}
 			]
 		},
 		{
