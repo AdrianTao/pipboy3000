@@ -16,6 +16,7 @@
 	height: 60px;
 	border-radius: 70px;
 	margin: 10px;
+	background-image: url(images/btn.png);
 }
 
 #display{
